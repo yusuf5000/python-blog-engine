@@ -1,0 +1,14 @@
+{% extends "templates/base.html" %}
+
+{% block body %}
+<h1>Posts</h1>
+<ul>
+    {% for i in list %}
+        {% if i.endswith(".mkd") %}
+            <li><a href="/posts/{{ i[:-4] }}">{{ i[:-4].replace("_", " ").capitalize() }}</a></li>
+        {% else %}
+            <li><a href="/posts/{{ i[:-3] }}">{{ i[:-3].replace("_", " ").capitalize() }}</a></li>
+        {% endif %}
+    {% endfor %}
+</ul>
+{% endblock %}

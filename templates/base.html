@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/static/style.css">
+        <link rel="stylesheet" href="/static/syntax.css">
+        <title>{% block title %}{% endblock %}</title>
+    </head>
+    <body>
+        <header>
+            <h1 id="title">
+                {% if meta %}{{ meta.title[0] }}{% else %}{{ title }}{% endif %}
+            </h1>
+            <p id="date">{% block date %}{% endblock %}</p>
+            <p id="description">
+                {% if meta %}{{ meta.description[0] }}{% endif %}
+            </p>
+            <hr/>
+            <nav id="navigation">
+                <a href="/">Home</a>
+                /
+                <a href="/posts/">Posts</a>
+                /
+                <a href="/tags/">Tags</a>
+            </nav>
+            <hr/>
+        </header>
+        <div id="body">
+            {% block body %}{% endblock %}
+        </div>
+        <footer>
+            <p style="float:right;"><a href="#">Top 🔼</a></p>
+        </footer>
+    </body>
+</html>

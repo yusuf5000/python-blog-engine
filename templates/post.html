@@ -1,0 +1,8 @@
+{% extends "templates/base.html" %}
+
+{% block title %}{{ meta['title'][0] }} - {{ meta['date'][0] }}{% endblock %}
+{% block date %}Posted on: {{ meta['date'][0] }}{% endblock %}
+
+{% block body %}
+{{ html }}
+{% endblock %}
